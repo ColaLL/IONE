@@ -1,9 +1,9 @@
 # AcrossNetworkEmbedding
 Source Code and Synthetic data for IJCAI 2016 paper "Aligning Users Across Social Networks Using Network Embedding"
 
-Note that as we are not the dataset owners, it is the across network embedding code with Synthetic dataset. If you can ask for the dataset permission of the author of paper IJCAI 15 paper "Integrated Anchor and Social Link Predictions across Partially Aligned Social Networks". We can share a complete version with all pre-preparation data.
+Note that as we are not the dataset owners, it is the across network embedding code with Synthetic dataset. If you can ask for the dataset permission of the author of paper IJCAI 15 paper "Integrated Anchor and Social Link Predictions across Partially Aligned Social Networks", we can share a complete version with all pre-preparation data.
 
-When you running the code, firstly check the Vars.java to make sure that the path of the data is correct.  New two folds which are named as "embeddings" in foursquare fold and twitter fold.
+When running the code, firstly check the Vars.java to make sure that the path of the data is correct.  New two folds which are named as "embeddings" in foursquare fold and twitter fold.
 
 Description of Data directory
 
@@ -12,7 +12,7 @@ Description of Data directory
    		foursquare:
    		
    			following: the relation file, "1  2" means user 1 is the follower of user 2.  			   			
-   			following.reverse: the reverse relation file, for model which considers only one direction context. ONE model
+   			following.reverse: the reverse relation file, for model which considers only one direction context. ONE model.
    			
    		twitter:
    		
@@ -20,7 +20,7 @@ Description of Data directory
    			
    		twitter_foursquare_groundtruth:
    		
-   			groundtruth: the groundtruth for our experiment, the anchor users between twitter and foursquare. Note that pls make the anchors as the *same* id during the pre-preparation, although the testing anchors will have the same id, they will *not* take part in the training progress as they are not contained in the groundtruth.x.foldtrain.test file.	
+   			groundtruth: the groundtruth for our experiment, the anchor users between twitter and foursquare. Note that pls make the anchors as the *same* id during the pre-preparation, although the testing anchors will have the same id, they will *not* take part in the training progress as they are not contained in the groundtruth.x.foldtrain.train file.	
    			
    			groundtruth.x.foldtrain.train, the traning anchors, which are the 0.x of all the anchors.
    			
