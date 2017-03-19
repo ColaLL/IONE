@@ -20,7 +20,10 @@ Description of Data directory
    			
    		twitter_foursquare_groundtruth:
    		
-   			groundtruth: the groundtruth for our experiment, the anchor users between twitter and foursquare. Note that pls make the anchors as the *same* id during the pre-preparation, although the testing anchors will have the same id, they will *not* take part in the training progress as they are not contained in the groundtruth.x.foldtrain.train file.	
+   			groundtruth: the groundtruth for our experiment, the anchor users between twitter and foursquare. 
+   			Note that pls make the anchors as the *same* id during the pre-preparation, 
+   			although the testing anchors will have the same id, 
+   			they will *not* take part in the training progress as they are not contained in the groundtruth.x.foldtrain.train file.	
    			
    			groundtruth.x.foldtrain.train, the traning anchors, which are the 0.x of all the anchors.
    			
