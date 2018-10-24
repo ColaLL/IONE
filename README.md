@@ -3,6 +3,26 @@ Source Code and anonymous data for IJCAI 2016 paper "Aligning Users Across Socia
 
 <b>Note that as we are not the dataset owners, it is the across network embedding code with Synthetic dataset. If you can ask for the dataset permission of the author of paper IJCAI 15 paper "Integrated Anchor and Social Link Predictions across Partially Aligned Social Networks", we can share a complete version with all pre-preparation data.</b>
 
+
+
+@inproceedings{zhang2015integrated,
+  title={Integrated Anchor and Social Link Predictions across Social Networks.},
+  author={Zhang, Jiawei and Philip, S Yu},
+  booktitle={IJCAI},
+  pages={2125--2132},
+  year={2015}
+}
+
+
+
+@inproceedings{liu2016aligning,
+  title={Aligning Users across Social Networks Using Network Embedding.},
+  author={Liu, Li and Cheung, William K and Li, Xin and Liao, Lejian},
+  booktitle={IJCAI},
+  pages={1774--1780},
+  year={2016}
+}
+
 When running the code, firstly check the Vars.java to make sure that the path of the data is correct.  New two folds which are named as "embeddings" in foursquare fold and twitter fold.
 
 Description of Data directory
