@@ -59,8 +59,10 @@ Description of Data directory
    			
    			groundtruth.x.foldtrain.test,  the testing anchors, which are the 1-0.x of all the anchors.
    			
-   			<!--groundtruth.test.linkp.x, the soft constraint file, which is predicted by a classifier. Only for the IONES model. Where x is the imbalance ratio of training classifier-->
-   			
+
+
+<!-- groundtruth.test.linkp.x, the soft constraint file, which is predicted by a classifier. Only for the IONES model. Where x is the imbalance ratio of training classifier -->
+
 
 There are four models of our paper, INE, ONE , IONE and IONE-S
 
