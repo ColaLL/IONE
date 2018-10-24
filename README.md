@@ -11,6 +11,20 @@ Source Code and anonymous data for IJCAI 2016 paper "Aligning Users Across Socia
   year={2015}<br>
 }<br>
 
+@article{DBLP:journals/corr/abs-1804-09874,<br>
+  author    = {Jiawei Zhang},<br>
+  title     = {Social Network Fusion and Mining: {A} Survey},<br>
+  journal   = {CoRR},<br>
+  volume    = {abs/1804.09874},<br>
+  year      = {2018},<br>
+  url       = {http://arxiv.org/abs/1804.09874},<br>
+  archivePrefix = {arXiv},<br>
+  eprint    = {1804.09874},<br>
+  timestamp = {Mon, 13 Aug 2018 16:47:39 +0200},<br>
+  biburl    = {https://dblp.org/rec/bib/journals/corr/abs-1804-09874},<br>
+  bibsource = {dblp computer science bibliography, https://dblp.org}<br>
+}<br>
+
 @inproceedings{liu2016aligning,<br>
   title={Aligning Users across Social Networks Using Network Embedding.},<br>
   author={Liu, Li and Cheung, William K and Li, Xin and Liao, Lejian},<br>
