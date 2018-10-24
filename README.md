@@ -1,7 +1,7 @@
 # IONE
-Source Code and anonymous data for IJCAI 2016 paper "Aligning Users Across Social Networks Using Network Embedding"
+Source Code and anonymous twitter_foursquare data for IJCAI 2016 paper "Aligning Users Across Social Networks Using Network Embedding"
 
-<b>Note that as we are not the dataset owners, it is the across network embedding code with Synthetic dataset. If you can ask for the dataset permission of the author of paper IJCAI 15 paper "Integrated Anchor and Social Link Predictions across Partially Aligned Social Networks", we can share a complete version with all pre-preparation data.</b>
+<b>If you use the data and code of this project, please cite the following three papers. Note that the data and code only can be used for research purposes</b>
 
 @inproceedings{zhang2015integrated,<br>
   title={Integrated Anchor and Social Link Predictions across Social Networks.},<br>
@@ -33,7 +33,7 @@ Source Code and anonymous data for IJCAI 2016 paper "Aligning Users Across Socia
   year={2016}<br>
 }<br>
 
-When running the code, firstly check the Vars.java to make sure that the path of the data is correct.  New two folds which are named as "embeddings" in foursquare fold and twitter fold.
+When running the code, firstly check the Vars.java to make sure that the path of the data is correct. New two folds which are named as "embeddings" in foursquare fold and twitter fold.
 
 Description of Data directory
 
@@ -59,20 +59,22 @@ Description of Data directory
    			
    			groundtruth.x.foldtrain.test,  the testing anchors, which are the 1-0.x of all the anchors.
    			
-   			groundtruth.test.linkp.x, the soft constraint file, which is predicted by a classifier. Only for the IONES model. Where x is the imbalance ratio of training classifier
+   			<!--groundtruth.test.linkp.x, the soft constraint file, which is predicted by a classifier. Only for the IONES model. Where x is the imbalance ratio of training classifier-->
    			
 
 There are four models of our paper, INE, ONE , IONE and IONE-S
 
-For the INE and ONE, run the INE.java. If you run the INE model, just use "test.Train(10000000, "", 100);", for ONE model,
-modify the code as "test.Train(10000000, ".reverse", 100);".
+For the INE and ONE, run the INE.java. If you run the INE model, use "test.Train(10000000, "", 100);". For ONE model, reverse the relationship between users for a new following file, then run the INE.java.
+<!--modify the code as "test.Train(10000000, ".reverse", 100);".-->
 
 For the IONE, run the IONE.java.
 
-For the IONES, run the IONES.java
+<!--For the IONES, run the IONES.java-->
 
-If you want to test the performance of the models with different interops, add the postfix to the Train function. For example,
-"test.Train(10000000, ".0.1", 100);".
+<!--If you want to test the performance of the models with different interops, add the postfix to the Train function. For example,
+"test.Train(10000000, ".0.1", 100);".-->
+
+We will add the IONES model with anonymous data as soon as possible.
 
 All the embeddings in the embedding directory of foursquare and twitter.
 
