@@ -1,27 +1,23 @@
 # IONE
 Source Code and anonymous data for IJCAI 2016 paper "Aligning Users Across Social Networks Using Network Embedding"
 
-<b>Note that as we are not the dataset owners, it is the across network embedding code with Synthetic dataset. If you can ask for the dataset permission of the author of paper IJCAI 15 paper "Integrated Anchor and Social Link Predictions across Partially Aligned Social Networks", we can share a complete version with all pre-preparation data.</b>
+<b>Note that as we are not the dataset owners, it is the across network embedding code with Synthetic dataset. If you can ask for the dataset permission of the author of paper IJCAI 15 paper "Integrated Anchor and Social Link Predictions across Partially Aligned Social Networks", we can share a complete version with all pre-preparation data.<b>
 
+@inproceedings{zhang2015integrated,<br>
+  title={Integrated Anchor and Social Link Predictions across Social Networks.},<br>
+  author={Zhang, Jiawei and Philip, S Yu},<br>
+  booktitle={IJCAI},<br>
+  pages={2125--2132},<br>
+  year={2015}<br>
+}<br>
 
-
-@inproceedings{zhang2015integrated,
-  title={Integrated Anchor and Social Link Predictions across Social Networks.},
-  author={Zhang, Jiawei and Philip, S Yu},
-  booktitle={IJCAI},
-  pages={2125--2132},
-  year={2015}
-}
-
-
-
-@inproceedings{liu2016aligning,
-  title={Aligning Users across Social Networks Using Network Embedding.},
-  author={Liu, Li and Cheung, William K and Li, Xin and Liao, Lejian},
-  booktitle={IJCAI},
-  pages={1774--1780},
-  year={2016}
-}
+@inproceedings{liu2016aligning,<br>
+  title={Aligning Users across Social Networks Using Network Embedding.},<br>
+  author={Liu, Li and Cheung, William K and Li, Xin and Liao, Lejian},<br>
+  booktitle={IJCAI},<br>
+  pages={1774--1780},<br>
+  year={2016}<br>
+}<br>
 
 When running the code, firstly check the Vars.java to make sure that the path of the data is correct.  New two folds which are named as "embeddings" in foursquare fold and twitter fold.
 
