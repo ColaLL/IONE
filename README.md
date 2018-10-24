@@ -1,7 +1,7 @@
 # IONE
 Source Code and anonymous twitter_foursquare data for IJCAI 2016 paper "Aligning Users Across Social Networks Using Network Embedding"
 
-<b>If you use the data and code of this project, please cite the following three papers. Note that the data and code only can be used for research purposes</b>
+<b>With the permission of sharing anonymous twitter_foursquare data from Prof.Jiawei Zhang, we share the anonymous data and code of IONE here. If you use the data and code of this project, please cite the following three papers. Note that the data and code only can be used for research purposes</b>
 
 @inproceedings{zhang2015integrated,<br>
   title={Integrated Anchor and Social Link Predictions across Social Networks.},<br>
