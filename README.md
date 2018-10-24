@@ -1,7 +1,7 @@
 # IONE
 Source Code and anonymous data for IJCAI 2016 paper "Aligning Users Across Social Networks Using Network Embedding"
 
-<b>Note that as we are not the dataset owners, it is the across network embedding code with Synthetic dataset. If you can ask for the dataset permission of the author of paper IJCAI 15 paper "Integrated Anchor and Social Link Predictions across Partially Aligned Social Networks", we can share a complete version with all pre-preparation data.<b>
+<b>Note that as we are not the dataset owners, it is the across network embedding code with Synthetic dataset. If you can ask for the dataset permission of the author of paper IJCAI 15 paper "Integrated Anchor and Social Link Predictions across Partially Aligned Social Networks", we can share a complete version with all pre-preparation data.</b>
 
 @inproceedings{zhang2015integrated,<br>
   title={Integrated Anchor and Social Link Predictions across Social Networks.},<br>
