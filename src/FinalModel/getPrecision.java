@@ -59,7 +59,7 @@ public class getPrecision {
 	{
 		HashSet<String> anchors_set=new HashSet<String>();
 		String anchors_file=
-				Vars.twitter_dir+"/twitter_foursquare_groundtruth/groundtruth."+this.fold_train+".foldtrain.test";
+				Vars.twitter_dir+"/twitter_foursquare_groundtruth/groundtruth."+this.fold_train+".foldtrain.test.number";
 		BufferedReader br=BasicUnit.readData(anchors_file);
 		String temp_string=br.readLine();
 		while(temp_string!=null)
@@ -215,7 +215,8 @@ public class getPrecision {
 		for(int i=9;i<10;i+=1)
 		{
 			getPrecision test=new getPrecision(i);
-			String temp_string="update.2SameAnchor.twodirectionContext.Predict.imb.1..100_dim";
+			//String temp_string="update.2SameAnchor.twodirectionContext.Predict.imb.1..100_dim";//for iones prediction
+			String temp_string="update.2SameAnchor.twodirectionContext.number.100_dim";
 			System.out.println(temp_string);
 			test.getFinalAnswer(temp_string);
 		}

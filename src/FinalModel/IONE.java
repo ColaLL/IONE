@@ -11,10 +11,17 @@ public class IONE {
 	
 	//network x as the foursquare, network y as the twitter 
 	
+	int foldtrain=9;
+	
+	public IONE(int foldtrain)
+	{
+		this.foldtrain=foldtrain;
+	}
+	
 	public HashMap<String,String> getNetworkAnchors(String postfix_1,String postfix_2) throws IOException
 	{
 		HashMap<String,String> answer_map=new HashMap<String,String>();
-		String file_name=Vars.twitter_dir+"twitter_foursquare_groundtruth/groundtruth.9.foldtrain.train";
+		String file_name=Vars.twitter_dir+"twitter_foursquare_groundtruth/groundtruth.9.foldtrain.train.number";
 		BufferedReader br=BasicUnit.readData(file_name);
 		String temp_string=br.readLine();
 		while(temp_string!=null)
@@ -75,9 +82,12 @@ public class IONE {
 	}
 	public static void main(String[] args) throws IOException
 	{
-		IONE test=
-				new IONE();
-		test.Train(10000000, "", 100);
+		for(int i=9;i>0;i--)
+		{
+			IONE test=
+					new IONE(i);
+			test.Train(10000000, ".number", 100);
+		}
 	}
 	
 

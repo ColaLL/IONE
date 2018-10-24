@@ -14,7 +14,7 @@ public class INE {
 	public HashMap<String,String> getNetworkAnchors(String postfix_1,String postfix_2) throws IOException
 	{
 		HashMap<String,String> answer_map=new HashMap<String,String>();
-		String file_name=Vars.twitter_dir+"twitter_foursquare_groundtruth/groundtruth.9.foldtrain.train";
+		String file_name=Vars.twitter_dir+"twitter_foursquare_groundtruth/groundtruth.9.foldtrain.train.number";
 		BufferedReader br=BasicUnit.readData(file_name);
 		String temp_string=br.readLine();
 		while(temp_string!=null)
