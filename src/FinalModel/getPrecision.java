@@ -25,6 +25,7 @@ public class getPrecision {
 	
 	public HashMap<String,double[]> getUserEmbeddingTest(String filename) throws IOException
 	{
+		HashSet<String> train_anchors=this.getTrainAnchors();
 		HashMap<String,double[]> answer=new HashMap<String,double[]>();
 		BufferedReader br=new BufferedReader(new FileReader(filename));
 		String temp_string=br.readLine();
@@ -32,6 +33,12 @@ public class getPrecision {
 		{
 			String[] array=temp_string.split("\\s+");
 			String name=array[0];
+			if(train_anchors.contains(name.replace("_twitter", ""))||
+					train_anchors.contains(name.replace("_foursquare", "")))
+			{
+				temp_string=br.readLine();
+				continue;
+			}
 			String[] string_embeddings=array[1].split("\\|");
 			double[] temp_embedding=new double[string_embeddings.length];
 			double total=0;
@@ -60,6 +67,22 @@ public class getPrecision {
 		HashSet<String> anchors_set=new HashSet<String>();
 		String anchors_file=
 				Vars.twitter_dir+"/twitter_foursquare_groundtruth/groundtruth."+this.fold_train+".foldtrain.test.number";
+		BufferedReader br=BasicUnit.readData(anchors_file);
+		String temp_string=br.readLine();
+		while(temp_string!=null)
+		{
+			anchors_set.add(temp_string);
+			temp_string=br.readLine();
+		}
+		br.close();
+		return anchors_set;
+	}
+	
+	public HashSet<String> getTrainAnchors() throws IOException
+	{
+		HashSet<String> anchors_set=new HashSet<String>();
+		String anchors_file=
+				Vars.twitter_dir+"/twitter_foursquare_groundtruth/groundtruth."+this.fold_train+".foldtrain.train.number";
 		BufferedReader br=BasicUnit.readData(anchors_file);
 		String temp_string=br.readLine();
 		while(temp_string!=null)
@@ -101,7 +124,7 @@ public class getPrecision {
 			double[] embedding_1=myspace_embedding.get(uid);
 			ArrayList<String> user_set=new ArrayList<String>();
 			for(String last_id:lastfm_embedding.keySet())
-			{	
+			{
 					double[] embedding_2=lastfm_embedding.get(last_id);
 					double cosin_value=BasicUnit.getCosinFast(embedding_1,embedding_2);
 					temp_answer.put(last_id, cosin_value);
@@ -110,6 +133,10 @@ public class getPrecision {
 			ArrayList<Map.Entry<String, Double>> temp_answer_list=BasicUnit.sortDoubleMap(temp_answer);
 			for(int i=0;i<temp_answer_list.size();i++)
 			{
+				/*if(lastfm_name.equals("datachick"))
+				{
+					System.out.println(temp_answer_list.get(i).getKey().replace("_foursquare", ""));
+				}*/
 				if(lastfm_name.equals(temp_answer_list.get(i).getKey().replace("_foursquare", "")))
 				{
 					for(int j:answer.keySet())
@@ -191,18 +218,33 @@ public class getPrecision {
 	{
 		HashSet<String> anchors=getAnchors();
 		double total=anchors.size()*2;
-		for(int i=10000000;i<=10000000;i+=1000000)
+		for(int i=10000000;i<=10000000;i+=10000000)
 		{
 			String file_postfix=embedding_type+"."+i;
-			TreeMap<Integer, Integer> answer_1=getTopSimilarity(30,file_postfix);
-			TreeMap<Integer, Integer> answer_2=getTopSimilarityReverse(30,file_postfix);
-			System.out.println(i+" "+total);
+			TreeMap<Integer, Integer> answer_1=getTopSimilarity(30,file_postfix); //twitter find foursquare
+			//System.out.println("===========================");
+			TreeMap<Integer, Integer> answer_2=getTopSimilarityReverse(30,file_postfix);//foursquare find twitter
+			//System.out.println(i+" "+total);
+			
+			/*for(int key:answer_1.keySet())
+			{
+				double right=answer_1.get(key);
+				System.out.print(right*2/total+" ");
+			}
+			System.out.println();
+			for(int key:answer_2.keySet())
+			{
+				double right=answer_2.get(key);
+				System.out.print(right*2/total+" ");
+			}
+			System.out.println();*/
 			for(int key:answer_1.keySet())
 			{
 				double right=answer_1.get(key)+answer_2.get(key);
-				System.out.print(right/total+" ");
+				//if(key==1)
+					System.out.print(right/total+",");
 			}
-			System.out.println();
+			//System.out.println();
 
 		}
 
@@ -215,14 +257,15 @@ public class getPrecision {
 		for(int i=9;i<10;i+=1)
 		{
 			getPrecision test=new getPrecision(i);
-			//String temp_string="update.2SameAnchor.twodirectionContext.Predict.imb.1..100_dim";//for iones prediction
-			String temp_string="update.2SameAnchor.twodirectionContext.number.100_dim";
-			System.out.println(temp_string);
+			String temp_string="update.2SameAnchor."+i+".foldtrain.twodirectionContext.number.100_dim";
 			test.getFinalAnswer(temp_string);
+			
 		}
-		
 		long end = System.currentTimeMillis();
-		System.out.println(end-start);
+		//System.out.println(end-start);
 	}
 
 }
+
+
+

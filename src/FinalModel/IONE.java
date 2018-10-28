@@ -21,7 +21,7 @@ public class IONE {
 	public HashMap<String,String> getNetworkAnchors(String postfix_1,String postfix_2) throws IOException
 	{
 		HashMap<String,String> answer_map=new HashMap<String,String>();
-		String file_name=Vars.twitter_dir+"twitter_foursquare_groundtruth/groundtruth.9.foldtrain.train.number";
+		String file_name=Vars.twitter_dir+"twitter_foursquare_groundtruth/groundtruth."+this.foldtrain+".foldtrain.train.number";
 		BufferedReader br=BasicUnit.readData(file_name);
 		String temp_string=br.readLine();
 		while(temp_string!=null)
@@ -40,12 +40,12 @@ public class IONE {
 				StaticVar.Vars.twitter_dir+"/foursquare/following"+fileInterop;
 		String ouput_filename_networkx=
 				StaticVar.Vars.twitter_dir+
-				"/foursquare/embeddings/foursquare.embedding.update.2SameAnchor.twodirectionContext"+fileInterop;
+				"/foursquare/embeddings/foursquare.embedding.update.2SameAnchor."+this.foldtrain+".foldtrain.twodirectionContext"+fileInterop;
 		String networky_file=
 				StaticVar.Vars.twitter_dir+"/twitter/following"+fileInterop;
 		String ouput_filename_networky=
 				StaticVar.Vars.twitter_dir+
-				"/twitter/embeddings/twitter.embedding.update.2SameAnchor.twodirectionContext"+fileInterop;
+				"/twitter/embeddings/twitter.embedding.update.2SameAnchor."+this.foldtrain+".foldtrain.twodirectionContext"+fileInterop;
 		
 		IONEUpdate twoOrder_x=
 				new IONEUpdate(dim,networkx_file,"foursquare");
@@ -82,7 +82,7 @@ public class IONE {
 	}
 	public static void main(String[] args) throws IOException
 	{
-		for(int i=9;i>0;i--)
+		for(int i=9;i>8;i--)
 		{
 			IONE test=
 					new IONE(i);

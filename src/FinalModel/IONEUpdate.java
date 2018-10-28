@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Random;
 
 public class IONEUpdate {
 	
@@ -37,6 +38,7 @@ public class IONEUpdate {
 	int neg_table_size=10000000;
 	String input_file;
 	String postfix;
+	Random rnd=new Random(123);
 	
 	public IONEUpdate(int dim,String filename,String postfix_string)
 	{
@@ -83,7 +85,7 @@ public class IONEUpdate {
 				emb_context_output=new double[dimension];
 				for(int i=0;i<dimension;i++)
 				{
-						emb_vertex[i]=(Math.random()-0.5)/dimension;						
+						emb_vertex[i]=(rnd.nextDouble()-0.5)/dimension;						
 						if(Double.isInfinite(emb_vertex[i]))
 						{
 							System.out.println("init infinite");
@@ -111,7 +113,7 @@ public class IONEUpdate {
 				for(int i=0;i<dimension;i++)
 				{
 					
-						emb_vertex[i]=(Math.random()-0.5)/dimension;
+						emb_vertex[i]=(rnd.nextDouble()-0.5)/dimension;
 						if(Double.isInfinite(emb_vertex[i]))
 						{
 							System.out.println("init infinite");
@@ -452,8 +454,8 @@ public class IONEUpdate {
 				if(rho<init_rho*0.0001) rho=init_rho*0.0001;
 				System.out.println(i+" "+rho);
 			}
-			double random1=Math.random();
-			double random2=Math.random();
+			double random1=rnd.nextDouble();
+			double random2=rnd.nextDouble();
 			int edge_id=(int) sampleAnEdge(random1,random2);
 			String uid_1=source_id.get(edge_id);
 			String uid_2=target_id.get(edge_id);
@@ -468,7 +470,7 @@ public class IONEUpdate {
 				}
 				else
 				{
-					int neg_index=(int) (neg_table_size*Math.random());
+					int neg_index=(int) (neg_table_size*rnd.nextDouble());
 					target=neg_table[neg_index];
 					if(uid_1==null||uid_2==null||target==null)
 					{
