@@ -81,5 +81,6 @@ We will add the IONES model with anonymous data as soon as possible.
 All the embeddings in the embedding directory of foursquare and twitter.
 
 The getPrecision.java is used for p@1-p@30 calculation of our model。
+<b>Note that in the evaluation, we use the |UnalignedUsers|=(|UnalignedAnchors|+|UnalignedNonAnchors|) as the candidate list. The Precison may be lower than metrics which only use |UnalignedAnchors| as the candidate list</b>
 
 Feel free to contact me (Liu Li liuli0407@hotmail.com) when you have any problems about the paper or the code. 
